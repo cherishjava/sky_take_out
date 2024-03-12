@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 @ConfigurationProperties(prefix = "sky.jwt")
 @Data
-public class JwtProperties {
+public class JwtProperties {//配置属性类这种方式，把springboot里面这些配置项封装成一个Java对象，然后把这个对象注入给controller
 
     /**
      * 管理端员工生成jwt令牌相关配置
