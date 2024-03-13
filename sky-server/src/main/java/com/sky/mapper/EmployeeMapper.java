@@ -34,4 +34,10 @@ public interface EmployeeMapper {
      */
     //写进映射文件中
     Page<Employee> pageQuery(EmployeePageQueryDTO employeePageQueryDTO);
+
+    /**
+     * 修改员工
+     * @param employee
+     */
+    void update(Employee employee);
 }
