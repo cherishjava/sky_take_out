@@ -8,12 +8,14 @@
         values (#{categoryId}, #{name}, #{price}, #{status}, #{description}, #{image}, #{createTime}, #{updateTime},
                 #{createUser}, #{updateUser})
     </insert>
-    <update id="update">
+    <update id="update" parameterType="Setmeal">
         update setmeal
         <set>
-            <if test="categoryId != null">category_id = #{categoryId},</if>
             <if test="name != null">
                 name = #{name},
+            </if>
+            <if test="categoryId != null">
+                category_id = #{categoryId},
             </if>
             <if test="price != null">
                 price = #{price},
@@ -30,7 +32,11 @@
             <if test="updateTime != null">
                 update_time = #{updateTime},
             </if>
-        </set>>
+            <if test="updateUser != null">
+                update_user = #{updateUser}
+            </if>
+        </set>
+        where id = #{id}
     </update>
     <select id="pageQuery" resultType="com.sky.vo.SetmealVO">
         select
