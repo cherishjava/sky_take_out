@@ -34,7 +34,7 @@ public class PayNotifyController {
      *
      * @param request
      */
-    @RequestMapping("/paySuccess")
+    @RequestMapping("/paySuccess")  //这边没用上，直接修改 OrderController ，直接调用 paySuccess（原文件自带）
     public void paySuccessNotify(HttpServletRequest request, HttpServletResponse response) throws Exception {
         //读取数据
         String body = readData(request);
